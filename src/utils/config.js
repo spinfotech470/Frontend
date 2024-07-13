@@ -1,6 +1,6 @@
 // config.js
 const config = {
-    baseUrl: process.env.BASE_URL || 'http://localhost:5000',
+    baseUrl: 'http://13.232.7.232',
   };
   
   module.exports = config;

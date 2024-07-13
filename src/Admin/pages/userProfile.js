@@ -1,4 +1,4 @@
-import { Col, Container, form, Row, Button, Form, Modal } from "react-bootstrap";
+import { Col, Row, Button, Form, Modal } from "react-bootstrap";
 import Card from 'react-bootstrap/Card';
 import React, { useEffect, useState, useContext } from "react";
 import { AuthContext } from "../../contexts/AuthContext";
@@ -15,7 +15,7 @@ import Tabs from 'react-bootstrap/Tabs';
 import { Image } from 'react-bootstrap';
 import actor from "../../assest/img/actor.jpg"
 import { useNavigate, useLocation } from "react-router-dom";
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import questionService from "../../services/questionService";
 import ProfileIcon from "../../assest/img/actor.jpg";
 import ShareButtons from "../common/common.function";
@@ -27,7 +27,6 @@ const UserProfile = (props) => {
     const [isDisabled, setDisabled] = useState(false);
     const { user, logout } = useContext(AuthContext);
     const values = [true];
-    const [fullscreen, setFullscreen] = useState(true);
     const [show, setShow] = useState(false);
     const [anonymous, setAnonymous] = useState(true);
     const [file, setFile] = useState("");
@@ -183,11 +182,6 @@ const UserProfile = (props) => {
 
     const handleClose = () => setShow(false);
     const handleToggleAnonymous = () => setAnonymous(!anonymous);
-
-    function handleShow(breakpoint) {
-        setFullscreen(breakpoint);
-        setShow(true);
-    }
 
     const handleNavigation = () => {
         navigate('/');
